@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"github.com/auxdible/goapi-tutorial/internal/middleware"
+	"github.com/Auxdible/goapi-tutorial/internal/middleware"
 	"github.com/go-chi/chi"
 	chimiddle "github.com/go-chi/chi/middleware"
 )
