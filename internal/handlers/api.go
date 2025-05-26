@@ -10,7 +10,7 @@ func Handler(r *chi.Mux) {
 	r.Use(chimiddle.StripSlashes)
 
 	r.Route("/account", func(router chi.Router) {
-		router.use(middleware.Authorization)
+		router.Use(middleware.Authorization)
 
 		router.Get("/coins", GetCoinBalance)
 	})

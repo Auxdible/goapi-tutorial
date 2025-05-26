@@ -14,19 +14,19 @@ type CoinBalanceParams struct {
 // Coin balance response
 type CoinBalanceResponse struct {
 	// Code is the HTTP status code, usually 200 for success
-	Code int
+	Code int `json:"code"`
 
 	// Balance is the user's coin balance
-	Balance int64
+	Balance int64 `json:"balance"`
 }
 
 // Error response
 type Error struct {
 	// Code is the HTTP status code, usually 400 or 500
-	Code int
+	Code int `json:"code"`
 
 	// Message is a human-readable error message
-	Message string
+	Message string `json:"message"`
 }
 
 func writeError(w http.ResponseWriter, message string, code int) {

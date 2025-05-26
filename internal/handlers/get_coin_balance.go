@@ -30,8 +30,7 @@ func GetCoinBalance(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var tokenDetails *tools.CoinDetails
-	tokenDetails = (*database).GetCoinBalance(params.Username)
+	var tokenDetails *tools.CoinDetails = (*database).GetCoinBalance(params.Username)
 
 	if tokenDetails == nil {
 		log.Error(err)
@@ -47,5 +46,10 @@ func GetCoinBalance(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	err = json.NewEncoder(w).Encode(response)
+	if err != nil {
+		log.Errorf("Error encoding response: %v", err)
+		api.InternalErrorHandler(w)
+		return
+	}
 
 }

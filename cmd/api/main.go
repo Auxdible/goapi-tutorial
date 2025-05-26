@@ -13,7 +13,7 @@ func main() {
 
 	log.SetReportCaller(true)
 	var r *chi.Mux = chi.NewRouter()
-	handlers.Handler()
+	handlers.Handler(r)
 
 	fmt.Println("Starting GO API service...")
 	err := http.ListenAndServe("localhost:8080", r)
