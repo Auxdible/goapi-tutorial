@@ -4,9 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"github.com/Auxdible/goapi-tutorial/api"
 	"github.com/Auxdible/goapi-tutorial/internal/tools"
-	"github.com/auxdible/goapi-tutorial/api"
-	"github.com/auxdible/goapi-tutorial/internal/tools"
 	"github.com/gorilla/schema"
 	log "github.com/sirupsen/logrus"
 )
